@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COURA SHOP - Votre boutique de mode en ligne</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/carousel.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <h1>COURA SHOP</h1>
+                    <p class="tagline">Votre style, notre passion</p>
+                </div>
+                
+                <nav class="nav-menu" id="navMenu">
+                    <ul class="nav-list">
+                        <li><a href="#home" class="nav-link active">Accueil</a></li>
+                        <li><a href="#products" class="nav-link">Produits</a></li>
+                        <li><a href="#categories" class="nav-link">Catégories</a></li>
+                        <li><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="nav-actions">
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="Rechercher des produits..." class="search-input">
+                        <button class="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                    
+                    <button class="cart-btn" id="cartBtn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                    
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="container">
+                <h2 class="hero-title">Bienvenue chez COURA SHOP</h2>
+                <p class="hero-subtitle">Découvrez notre collection exclusive de vêtements, cosmétiques et accessoires de mode</p>
+                <a href="#products" class="cta-button">Découvrir nos produits</a>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="categories">
+        <div class="container">
+            <h2 class="section-title">Nos Catégories</h2>
+            <div class="categories-grid">
+                <a href="pages/vetements.html" class="category-card-link">
+                    <div class="category-card" data-category="vetements">
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Vêtements">
+                        </div>
+                        <h3>Vêtements</h3>
+                        <p>Collection tendance pour tous les styles</p>
+                    </div>
+                </a>
+                
+                <a href="pages/cosmetiques.html" class="category-card-link">
+                    <div class="category-card" data-category="cosmetiques">
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cosmétiques">
+                        </div>
+                        <h3>Cosmétiques</h3>
+                        <p>Produits de beauté et soins</p>
+                    </div>
+                </a>
+                
+                <a href="pages/chaussures.html" class="category-card-link">
+                    <div class="category-card" data-category="chaussures">
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400" alt="Chaussures">
+                        </div>
+                        <h3>Chaussures</h3>
+                        <p>Des modèles pour chaque occasion</p>
+                    </div>
+                </a>
+                
+                <a href="pages/accessoires.html" class="category-card-link">
+                    <div class="category-card" data-category="accessoires">
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1599108859613-88a1fff8e2e4?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Accessoires">
+                        </div>
+                        <h3>Accessoires</h3>
+                        <p>Le détail qui fait la différence</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-title">Nos Produits</h2>
+            
+            <!-- Vêtements Section -->
+            <div class="products-category-section">
+                <div class="category-section-header">
+                    <h3 class="category-section-title">👗 Vêtements</h3>
+                    <a href="pages/vetements.html" class="view-all-link">Voir tout →</a>
+                </div>
+                <div class="products-carousel" id="vetements-carousel">
+                    <!-- Produits vêtements seront chargés ici -->
+                </div>
+            </div>
+
+            <!-- Cosmétiques Section -->
+            <div class="products-category-section">
+                <div class="category-section-header">
+                    <h3 class="category-section-title">💄 Cosmétiques</h3>
+                    <a href="pages/cosmetiques.html" class="view-all-link">Voir tout →</a>
+                </div>
+                <div class="products-carousel" id="cosmetiques-carousel">
+                    <!-- Produits cosmétiques seront chargés ici -->
+                </div>
+            </div>
+
+            <!-- Chaussures Section -->
+            <div class="products-category-section">
+                <div class="category-section-header">
+                    <h3 class="category-section-title">👞 Chaussures</h3>
+                    <a href="pages/chaussures.html" class="view-all-link">Voir tout →</a>
+                </div>
+                <div class="products-carousel" id="chaussures-carousel">
+                    <!-- Produits chaussures seront chargés ici -->
+                </div>
+            </div>
+
+            <!-- Accessoires Section -->
+            <div class="products-category-section">
+                <div class="category-section-header">
+                    <h3 class="category-section-title">✨ Accessoires</h3>
+                    <a href="pages/accessoires.html" class="view-all-link">Voir tout →</a>
+                </div>
+                <div class="products-carousel" id="accessoires-carousel">
+                    <!-- Produits accessoires seront chargés ici -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Mon Panier</h3>
+            <button class="close-cart" id="closeCart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="cart-items" id="cartItems">
+            <!-- Les articles du panier seront ajoutés ici -->
+        </div>
+        
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">0 FCFA</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">Passer la commande</button>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal" id="checkoutModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Finaliser la commande</h3>
+                <button class="close-modal" id="closeCheckout">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <form class="checkout-form" id="checkoutForm">
+                <div class="form-group">
+                    <label for="checkout-email">Email</label>
+                    <input type="email" id="checkout-email" name="email" placeholder="votre@email.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="checkout-name">Nom complet</label>
+                    <input type="text" id="checkout-name" name="name" placeholder="Votre nom" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="checkout-phone">Téléphone</label>
+                    <input type="tel" id="checkout-phone" name="phone" placeholder="+221 77 123 45 67">
+                </div>
+                
+                <div class="form-group">
+                    <label for="checkout-address">Adresse de livraison</label>
+                    <input type="text" id="checkout-address" name="address" placeholder="Rue, Numéro" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="checkout-city">Ville</label>
+                    <input type="text" id="checkout-city" name="city" placeholder="Ville" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="checkout-payment">Mode de paiement</label>
+                    <select id="checkout-payment" name="payment_method" required>
+                        <option value="">Sélectionner un mode de paiement</option>
+                        <option value="wave">Wave Money</option>
+                        <option value="orange-money">Orange Money</option>
+                        <option value="paypal">PayPal</option>
+                        <option value="mastercard">Mastercard</option>
+                    </select>
+                </div>
+                
+                <div class="checkout-summary">
+                    <h4>Résumé de la commande</h4>
+                    <div class="summary-items" id="summaryItems"></div>
+                    <div class="summary-total">
+                        <strong>Total:</strong>
+                        <strong id="summaryTotal">0 FCFA</strong>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn-primary">Confirmer la commande</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div class="modal" id="paymentModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Mode de paiement</h3>
+                <button class="close-modal" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="payment-methods">
+                <div class="payment-method" data-method="paypal">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+                    <span>PayPal</span>
+                </div>
+                
+                <div class="payment-method" data-method="mastercard">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard">
+                    <span>Mastercard</span>
+                </div>
+                
+                <div class="payment-method" data-method="orange-money">
+                    <img src="https://cdn.remitly.com/images/v1/img/orange_money_logo_tue_aug_01_202.RFbD56TI2smTyVsG.png" alt="Orange Money">
+                    <span>Orange Money</span>
+                </div>
+                
+                <div class="payment-method" data-method="wave">
+                    <img src="https://www.voyage-senegal.info/medias/2022/04/wave-banque-en-ligne-au-senegal-pour-paiement-transfert-argents.jpg" alt="Wave">
+                    <span>Wave</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Nous Contacter</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Informations de contact</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+221 77 732 53 13</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>contactcourashop@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Saint-Louis, Sénégal</span>
+                    </div>
+                </div>
+                
+                <form class="contact-form" id="contactForm">
+                    <input type="text" placeholder="Votre nom" required>
+                    <input type="email" placeholder="Votre email" required>
+                    <textarea placeholder="Votre message" rows="5" required></textarea>
+                    <button type="submit">Envoyer</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>COURA SHOP</h3>
+                    <p>Votre boutique de mode en ligne préférée</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Catégories</h4>
+                    <ul>
+                        <li><a href="pages/vetements.html">Vêtements</a></li>
+                        <li><a href="pages/cosmetiques.html">Cosmétiques</a></li>
+                        <li><a href="pages/chaussures.html">Chaussures</a></li>
+                        <li><a href="pages/accessoires.html">Accessoires</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Livraison rapide</a></li>
+                        <li><a href="#">Paiement sécurisé</a></li>
+                        <li><a href="#">Retour gratuit</a></li>
+                        <li><a href="#">Support 24/7</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Abonnez-vous pour recevoir nos offres exclusives</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" placeholder="Votre email" required>
+                        <button type="submit">S'abonner</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <P>DIONEDEV
+                    <a href="dionedevportofolio@gmail.com"target=_blank>Portofolio</a>
+                </P>
+                <p>&copy; 2026 COURA SHOP. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Scripts -->
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/auth-client.js"></script>
+    <script src="js/cart-client.js"></script>
+    <script src="js/payment-api.js"></script>
+    <script src="js/homepage-carousel.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmétiques - COURA SHOP</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <h1>COURA SHOP</h1>
+                    <p class="tagline">Votre style, notre passion</p>
+                </div>
+                
+                <nav class="nav-menu" id="navMenu">
+                    <ul class="nav-list">
+                        <li><a href="../index.html" class="nav-link">Accueil</a></li>
+                        <li><a href="../index.html#products" class="nav-link">Produits</a></li>
+                        <li><a href="../index.html#categories" class="nav-link">Catégories</a></li>
+                        <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="nav-actions">
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="Rechercher des cosmétiques..." class="search-input">
+                        <button class="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                    
+                    <button class="cart-btn" id="cartBtn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                    
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Category Hero Section -->
+    <section class="category-hero">
+        <div class="category-hero-content">
+            <div class="container">
+                <h2 class="category-title">Cosmétiques</h2>
+                <p class="category-description">Découvrez notre collection de produits de beauté et soins</p>
+                <div class="breadcrumb">
+                    <a href="../index.html">Accueil</a> / <span>Cosmétiques</span>
+                </div>
+            </div>
+        </div>
+        <div class="category-hero-overlay"></div>
+    </section>
+
+    <!-- Subcategories -->
+    <section class="subcategories">
+        <div class="container">
+            <h3>Parcourir par type</h3>
+            <div class="subcategories-grid">
+                <div class="subcategory-card" data-subcategory="maquillage">
+                    <div class="subcategory-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h4>Maquillage</h4>
+                    <p>Rouge à lèvres, fond de teint, mascara</p>
+                </div>
+                
+                <div class="subcategory-card" data-subcategory="soins">
+                    <div class="subcategory-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h4>Soins de la peau</h4>
+                    <p>Crèmes, sérums, nettoyants</p>
+                </div>
+                
+                <div class="subcategory-card" data-subcategory="parfums">
+                    <div class="subcategory-icon">
+                        <i class="fas fa-spray-can"></i>
+                    </div>
+                    <h4>Parfums</h4>
+                    <p>Eaux de parfum, eaux de toilette</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products">
+        <div class="container">
+            <div class="products-header">
+                <h2 class="section-title">Nos Cosmétiques</h2>
+                <div class="filters">
+                    <select id="sortBy" class="filter-select">
+                        <option value="">Trier par</option>
+                        <option value="price-asc">Prix croissant</option>
+                        <option value="price-desc">Prix décroissant</option>
+                        <option value="name">Nom</option>
+                        <option value="popular">Popularité</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="products-grid" id="productsGrid">
+                <!-- Les produits cosmétiques seront chargés ici -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Mon Panier</h3>
+            <button class="close-cart" id="closeCart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="cart-items" id="cartItems">
+            <!-- Les articles du panier seront ajoutés ici -->
+        </div>
+        
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">0 FCFA</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">Passer la commande</button>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div class="modal" id="paymentModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Résumé et mode de paiement</h3>
+                <button class="close-modal" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <!-- Order Summary -->
+            <div class="payment-summary">
+                <h4>Résumé de la commande</h4>
+                <div id="paymentSummaryItems" class="summary-items">
+                    <!-- Dynamically populated -->
+                </div>
+                <div class="summary-total">
+                    <span>Total à payer:</span>
+                    <span id="paymentTotal" class="payment-total-amount">0 FCFA</span>
+                </div>
+            </div>
+
+            <!-- Payment Methods Section -->
+            <div class="payment-methods-section">
+                <h4>Sélectionnez un mode de paiement</h4>
+                <div class="payment-methods">
+                    <div class="payment-method" data-method="paypal">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+                        <span>PayPal</span>
+                    </div>
+                    
+                    <div class="payment-method" data-method="mastercard">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard">
+                        <span>Carte bancaire</span>
+                    </div>
+                    
+                    <div class="payment-method" data-method="orange-money">
+                        <img src="https://cdn.remitly.com/images/v1/img/orange_money_logo_tue_aug_01_202.RFbD56TI2smTyVsG.png" alt="Orange Money">
+                        <span>Orange Money</span>
+                    </div>
+                    
+                    <div class="payment-method" data-method="wave">
+                        <img src="https://www.voyage-senegal.info/medias/2022/04/wave-banque-en-ligne-au-senegal-pour-paiement-transfert-argents.jpg" alt="Wave">
+                        <span>Wave Money</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Form -->
+            <div id="paymentForm" class="payment-form" style="display: none;">
+                <h4>Détails de paiement</h4>
+                <form id="paymentFormElement">
+                    <div class="form-group">
+                        <label for="fullName">Nom complet</label>
+                        <input type="text" id="fullName" name="fullName" required placeholder="COURA DIONE">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="CONTACTCOURASHOP@GMAIL.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Numéro de téléphone</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="+221 77 732 53 13">
+                    </div>
+
+                    <div id="cardFields" style="display: none;">
+                        <div class="form-group">
+                            <label for="cardNumber">Numéro de carte</label>
+                            <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="expiry">Expiration (MM/YY)</label>
+                                <input type="text" id="expiry" name="expiry" placeholder="12/25" maxlength="5">
+                            </div>
+                            <div class="form-group">
+                                <label for="cvv">CVV</label>
+                                <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="3">
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-payment-btn">
+                        <i class="fas fa-lock"></i> Payer maintenant
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Scripts -->
+    <script src="../js/products.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/payment-api.js"></script>
+    <script>
+        // Configuration pour la page cosmétiques
+        const CATEGORY_CONFIG = {
+            category: 'cosmetiques',
+            title: 'Cosmétiques',
+            description: 'Découvrez notre collection de produits de beauté et soins'
+        };
+
+        // Classe pour gérer la page de catégorie
+        class CategoryPage {
+            constructor() {
+                this.products = [];
+                this.filteredProducts = [];
+                this.cart = JSON.parse(localStorage.getItem('cart')) || [];
+                this.init();
+            }
+
+            init() {
+                this.loadProducts();
+                this.setupEventListeners();
+                this.updateCartCount();
+            }
+
+            loadProducts() {
+                // Filtrer les produits par catégorie
+                if (window.products) {
+                    this.products = window.products.filter(product => product.category === CATEGORY_CONFIG.category);
+                    this.filteredProducts = [...this.products];
+                    this.displayProducts();
+                } else {
+                    console.error('Produits non chargés');
+                    this.products = [];
+                    this.filteredProducts = [];
+                    this.displayProducts();
+                }
+            }
+
+            setupEventListeners() {
+                // Cart
+                const cartBtn = document.getElementById('cartBtn');
+                const cartSidebar = document.getElementById('cartSidebar');
+                const closeCart = document.getElementById('closeCart');
+                const overlay = document.getElementById('overlay');
+                
+                cartBtn?.addEventListener('click', () => {
+                    cartSidebar.classList.add('show');
+                    overlay.classList.add('show');
+                    this.displayCartItems();
+                });
+
+                closeCart?.addEventListener('click', () => {
+                    cartSidebar.classList.remove('show');
+                    overlay.classList.remove('show');
+                });
+
+                // Search
+                const searchInput = document.getElementById('searchInput');
+                searchInput?.addEventListener('input', (e) => {
+                    this.searchProducts(e.target.value);
+                });
+
+                // Sort
+                const sortBy = document.getElementById('sortBy');
+                sortBy?.addEventListener('change', (e) => {
+                    this.sortProducts(e.target.value);
+                });
+
+                // Checkout
+                const checkoutBtn = document.getElementById('checkoutBtn');
+                const paymentModal = document.getElementById('paymentModal');
+                const closeModal = document.getElementById('closeModal');
+
+                checkoutBtn?.addEventListener('click', () => {
+                    if (this.cart.length === 0) {
+                        this.showNotification('Votre panier est vide', 'error');
+                        return;
+                    }
+                    cartSidebar.classList.remove('show');
+                    paymentModal.classList.add('show');
+                    overlay.classList.add('show');
+                    this.displayPaymentSummary();
+                });
+
+                closeModal?.addEventListener('click', () => {
+                    paymentModal.classList.remove('show');
+                    overlay.classList.remove('show');
+                });
+
+                // Payment methods
+                document.querySelectorAll('.payment-method').forEach(method => {
+                    method.addEventListener('click', () => {
+                        document.querySelectorAll('.payment-method').forEach(m => m.classList.remove('selected'));
+                        method.classList.add('selected');
+                        
+                        const paymentMethod = method.dataset.method;
+                        this.showPaymentForm(paymentMethod);
+                    });
+                });
+
+                // Mobile menu
+                const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+                const navMenu = document.getElementById('navMenu');
+                
+                mobileMenuToggle?.addEventListener('click', () => {
+                    navMenu.classList.toggle('show');
+                });
+
+                // Close overlay when clicking outside
+                overlay?.addEventListener('click', () => {
+                    cartSidebar.classList.remove('show');
+                    paymentModal.classList.remove('show');
+                    overlay.classList.remove('show');
+                });
+            }
+
+            displayProducts() {
+                const productsGrid = document.getElementById('productsGrid');
+                if (!productsGrid) return;
+
+                productsGrid.innerHTML = '';
+                
+                if (this.filteredProducts.length === 0) {
+                    productsGrid.innerHTML = '<p class="no-products">Aucun produit trouvé dans cette catégorie.</p>';
+                    return;
+                }
+
+                if (!window.products) {
+                    productsGrid.innerHTML = '<p class="no-products">Erreur: Produits non chargés. Veuillez actualiser la page.</p>';
+                    return;
+                }
+
+                this.filteredProducts.forEach(product => {
+                    const productCard = document.createElement('div');
+                    productCard.className = 'product-card';
+                    productCard.innerHTML = `
+                        <div class="product-image-container">
+                            <img src="${product.image}" alt="${product.name}" class="product-image">
+                            ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''}
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">${product.name}</h3>
+                            <p class="product-description">${product.description}</p>
+                            <div class="product-meta">
+                                ${product.brand ? `<span class="product-brand">${product.brand}</span>` : ''}
+                                ${product.color ? `<span class="product-color">${product.color}</span>` : ''}
+                                ${product.size ? `<span class="product-size">${product.size}</span>` : ''}
+                            </div>
+                            <div class="product-price-add">
+                                <span class="product-price">${window.productUtils.formatPrice(product.price)}</span>
+                                <button class="add-to-cart" data-product-id="${product.id}">
+                                    <i class="fas fa-cart-plus"></i> Ajouter
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                    productsGrid.appendChild(productCard);
+                });
+
+                // Ajouter au panier - Utiliser le système de panier global
+                document.querySelectorAll('.add-to-cart').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const productId = parseInt(e.target.closest('.add-to-cart').dataset.productId);
+                        const product = this.products.find(p => p.id === productId);
+                        if (product) {
+                            window.cart.addItem(product);
+                            this.showNotification(`${product.name} ajouté au panier !`);
+                        }
+                    });
+                });
+            }
+
+            removeFromCart(productId) {
+                this.cart = this.cart.filter(item => item.id !== productId);
+                this.saveCart();
+                this.updateCartCount();
+                this.displayCartItems();
+            }
+
+            updateQuantity(productId, quantity) {
+                const item = this.cart.find(item => item.id === productId);
+                if (item) {
+                    if (quantity <= 0) {
+                        this.removeFromCart(productId);
+                    } else {
+                        item.quantity = quantity;
+                        this.saveCart();
+                        this.displayCartItems();
+                    }
+                }
+            }
+
+            updateCartCount() {
+                const cartCount = document.getElementById('cartCount');
+                const totalItems = this.cart.reduce((sum, item) => sum + item.quantity, 0);
+                if (cartCount) {
+                    cartCount.textContent = totalItems;
+                }
+            }
+
+            displayCartItems() {
+                const cartItems = document.getElementById('cartItems');
+                const cartTotal = document.getElementById('cartTotal');
+                
+                if (!cartItems || !cartTotal) return;
+
+                if (this.cart.length === 0) {
+                    cartItems.innerHTML = '<p style="text-align: center; padding: 2rem;">Votre panier est vide.</p>';
+                    cartTotal.textContent = '0 FCFA';
+                    return;
+                }
+
+                cartItems.innerHTML = '';
+                let total = 0;
+
+                this.cart.forEach(item => {
+                    const cartItem = document.createElement('div');
+                    cartItem.className = 'cart-item';
+                    cartItem.innerHTML = `
+                        <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+                        <div class="cart-item-info">
+                            <div class="cart-item-title">${item.name}</div>
+                            <div class="cart-item-price">${window.productUtils.formatPrice(item.price)}</div>
+                            <div class="cart-item-quantity">
+                                <button class="quantity-btn" onclick="categoryPage.updateQuantity(${item.id}, ${item.quantity - 1})">-</button>
+                                <span>${item.quantity}</span>
+                                <button class="quantity-btn" onclick="categoryPage.updateQuantity(${item.id}, ${item.quantity + 1})">+</button>
+                            </div>
+                            <button class="remove-item" onclick="categoryPage.removeFromCart(${item.id})">Supprimer</button>
+                        </div>
+                    `;
+                    cartItems.appendChild(cartItem);
+                    total += item.price * item.quantity;
+                });
+
+                cartTotal.textContent = window.productUtils.formatPrice(total);
+            }
+
+            searchProducts(query) {
+                if (!query.trim()) {
+                    this.filteredProducts = [...this.products];
+                } else {
+                    this.filteredProducts = this.products.filter(product => 
+                        product.name.toLowerCase().includes(query.toLowerCase()) ||
+                        product.description.toLowerCase().includes(query.toLowerCase()) ||
+                        (product.brand && product.brand.toLowerCase().includes(query.toLowerCase()))
+                    );
+                }
+                this.displayProducts();
+            }
+
+            async processPayment(method) {
+                const form = document.getElementById('paymentFormElement');
+                const fullName = form.fullName.value;
+                const email = form.email.value;
+                const phone = form.phone.value;
+                
+                // Validate form
+                if (!fullName || !email || !phone) {
+                    this.showNotification('Veuillez remplir tous les champs', 'error');
+                    return;
+                }
+                
+                // Validate email
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    this.showNotification('Email invalide', 'error');
+                    return;
+                }
+                
+                // Validate card fields if mastercard
+                if (method === 'mastercard') {
+                    const cardNumber = form.cardNumber.value;
+                    const expiry = form.expiry.value;
+                    const cvv = form.cvv.value;
+                    
+                    if (!cardNumber || !expiry || !cvv) {
+                        this.showNotification('Veuillez remplir les informations de carte', 'error');
+                        return;
+                    }
+                    
+                    if (cardNumber.replace(/\s/g, '').length !== 16) {
+                        this.showNotification('Numéro de carte invalide', 'error');
+                        return;
+                    }
+                }
+                
+                try {
+                    // Calculer le montant total
+                    let totalAmount = 0;
+                    this.cart.forEach(item => {
+                        totalAmount += item.price * item.quantity;
+                    });
+
+                    // Préparer les données de commande
+                    const orderData = {
+                        customer_name: fullName,
+                        customer_email: email,
+                        customer_phone: phone,
+                        items: this.cart,
+                        total_amount: totalAmount,
+                        payment_method: method
+                    };
+
+                    this.showNotification('Création de la commande...', 'success');
+
+                    // Créer la commande sur le backend
+                    const orderResponse = await paymentAPI.createOrder(orderData);
+
+                    if (!orderResponse.success) {
+                        throw new Error(orderResponse.error || 'Erreur lors de la création de la commande');
+                    }
+
+                    const orderId = orderResponse.order_id;
+
+                    // Traiter le paiement selon la méthode
+                    if (method === 'wave') {
+                        // Paiement Wave Money
+                        const paymentData = {
+                            order_id: orderId,
+                            amount: totalAmount,
+                            customer_name: fullName,
+                            customer_phone: phone,
+                            customer_email: email
+                        };
+
+                        this.showNotification('Initiation du paiement Wave Money...', 'success');
+                        
+                        const paymentResponse = await paymentAPI.initiateWavePayment(paymentData);
+
+                        if (!paymentResponse.success) {
+                            throw new Error(paymentResponse.error || 'Erreur lors de l\'initiation du paiement');
+                        }
+
+                        // En production, rediriger vers Wave
+                        // Pour le développement, simuler le succès
+                        this.showNotification('Paiement Wave Money en cours...', 'success');
+                        
+                        // Simuler la confirmation du paiement après 2 secondes
+                        setTimeout(async () => {
+                            const testResponse = await paymentAPI.testPayment(orderId);
+                            
+                            if (testResponse.success) {
+                                this.cart = [];
+                                this.saveCart();
+                                this.updateCartCount();
+                                document.getElementById('paymentModal').classList.remove('show');
+                                document.getElementById('overlay').classList.remove('show');
+                                this.showNotification('✓ Paiement reçu avec succès! Merci de votre achat.', 'success');
+                            }
+                        }, 2000);
+
+                    } else if (method === 'paypal') {
+                        // Simuler PayPal
+                        this.showNotification('Redirection vers PayPal simulée...', 'success');
+                        
+                        setTimeout(async () => {
+                            await paymentAPI.testPayment(orderId);
+                            this.cart = [];
+                            this.saveCart();
+                            this.updateCartCount();
+                            document.getElementById('paymentModal').classList.remove('show');
+                            document.getElementById('overlay').classList.remove('show');
+                            this.showNotification('✓ Paiement PayPal simulé avec succès!', 'success');
+                        }, 2000);
+
+                    } else if (method === 'orange-money') {
+                        // Simuler Orange Money
+                        this.showNotification('Paiement Orange Money simulé...', 'success');
+                        
+                        setTimeout(async () => {
+                            await paymentAPI.testPayment(orderId);
+                            this.cart = [];
+                            this.saveCart();
+                            this.updateCartCount();
+                            document.getElementById('paymentModal').classList.remove('show');
+                            document.getElementById('overlay').classList.remove('show');
+                            this.showNotification('✓ Paiement Orange Money simulé avec succès!', 'success');
+                        }, 2000);
+
+                    } else {
+                        throw new Error('Méthode de paiement non supportée');
+                    }
+
+                } catch (error) {
+                    console.error('Erreur paiement:', error);
+                    this.showNotification(`Erreur: ${error.message}`, 'error');
+                }
+            }
+
+            showPaymentForm(method) {
+                const paymentForm = document.getElementById('paymentForm');
+                const cardFields = document.getElementById('cardFields');
+                const paymentFormElement = document.getElementById('paymentFormElement');
+                
+                // Reset form
+                paymentFormElement.reset();
+                
+                // Show form
+                paymentForm.style.display = 'block';
+                
+                // Show card fields only for mastercard
+                cardFields.style.display = method === 'mastercard' ? 'block' : 'none';
+                
+                // Store selected method
+                paymentFormElement.dataset.method = method;
+                
+                // Update submit button text
+                const submitBtn = paymentFormElement.querySelector('.submit-payment-btn');
+                const methodName = {
+                    'paypal': 'PayPal',
+                    'mastercard': 'Carte bancaire',
+                    'orange-money': 'Orange Money',
+                    'wave': 'Wave Money'
+                }[method];
+                
+                submitBtn.innerHTML = `<i class="fas fa-lock"></i> Payer avec ${methodName}`;
+                
+                // Handle form submission
+                paymentFormElement.onsubmit = (e) => {
+                    e.preventDefault();
+                    this.processPayment(method);
+                };
+            }
+
+            displayPaymentSummary() {
+                const summaryItems = document.getElementById('paymentSummaryItems');
+                const paymentTotal = document.getElementById('paymentTotal');
+                
+                if (!summaryItems || !paymentTotal) return;
+                
+                summaryItems.innerHTML = '';
+                let total = 0;
+                
+                this.cart.forEach(item => {
+                    const itemElement = document.createElement('div');
+                    itemElement.className = 'summary-item';
+                    itemElement.innerHTML = `
+                        <div class="summary-item-details">
+                            <span class="summary-item-name">${item.name}</span>
+                            <span class="summary-item-qty">x${item.quantity}</span>
+                        </div>
+                        <span class="summary-item-price">${window.productUtils.formatPrice(item.price * item.quantity)}</span>
+                    `;
+                    summaryItems.appendChild(itemElement);
+                    total += item.price * item.quantity;
+                });
+                
+                paymentTotal.textContent = window.productUtils.formatPrice(total);
+            }
+
+            showNotification(message, type = 'success') {
+                const notification = document.createElement('div');
+                notification.className = `notification notification-${type}`;
+                notification.innerHTML = `
+                    <div class="notification-content">
+                        <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i>
+                        <span>${message}</span>
+                    </div>
+                `;
+                
+                document.body.appendChild(notification);
+                
+                setTimeout(() => {
+                    notification.classList.add('show');
+                }, 100);
+                
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                    setTimeout(() => {
+                        if (notification.parentNode) {
+                            notification.parentNode.removeChild(notification);
+                        }
+                    }, 300);
+                }, 3000);
+            }
+
+            saveCart() {
+                localStorage.setItem('cart', JSON.stringify(this.cart));
+            }
+        }
+
+        // Initialiser la page
+
+        const categoryPage = new CategoryPage();
+    </script>
+</body>
+</html>

@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessoires - COURA SHOP</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <h1>COURA SHOP</h1>
+                    <p class="tagline">Votre style, notre passion</p>
+                </div>
+                
+                <nav class="nav-menu" id="navMenu">
+                    <ul class="nav-list">
+                        <li><a href="../index.html" class="nav-link">Accueil</a></li>
+                        <li><a href="../index.html#products" class="nav-link">Produits</a></li>
+                        <li><a href="../index.html#categories" class="nav-link">Catégories</a></li>
+                        <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="nav-actions">
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="Rechercher des accessoires..." class="search-input">
+                        <button class="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                    
+                    <button class="cart-btn" id="cartBtn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                    
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Category Hero Section -->
+    <section class="category-hero">
+        <div class="category-hero-content">
+            <div class="container">
+                <h2 class="category-title">Accessoires</h2>
+                <p class="category-description">Le détail qui fait toute la différence</p>
+                <div class="breadcrumb">
+                    <a href="../index.html">Accueil</a> / <span>Accessoires</span>
+                </div>
+            </div>
+        </div>
+        <div class="category-hero-overlay"></div>
+    </section>
+
+    <!-- Subcategories -->
+    <section class="subcategories">
+        <div class="container">
+            <h3>Parcourir par type</h3>
+            <div class="subcategories-grid">
+                <div class="subcategory-card" data-subcategory="bags">
+                    <div class="subcategory-icon">
+                        <i class="fas fa-bag-shopping"></i>
+                    </div>
+                    <h4>Sacs</h4>
+                    <p>Sacs à main, portefeuilles, bagagerie</p>
+                </div>
+                
+                <div class="subcategory-card" data-subcategory="jewelry">
+                    <div class="subcategory-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h4>Bijoux</h4>
+                    <p>Colliers, bracelets, montres</p>
+                </div>
+                
+                <div class="subcategory-card" data-subcategory="others">
+                    <div class="subcategory-icon">
+                        <i class="fas fa-hat-cowboy"></i>
+                    </div>
+                    <h4>Autres</h4>
+                    <p>Lunettes, écharpes, ceintures</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products">
+        <div class="container">
+            <div class="products-header">
+                <h2 class="section-title">Nos Accessoires</h2>
+                <div class="filters">
+                    <select id="sortBy" class="filter-select">
+                        <option value="">Trier par</option>
+                        <option value="price-asc">Prix croissant</option>
+                        <option value="price-desc">Prix décroissant</option>
+                        <option value="name">Nom</option>
+                        <option value="popular">Popularité</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="products-grid" id="productsGrid">
+                <!-- Les produits accessoires seront chargés ici -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Mon Panier</h3>
+            <button class="close-cart" id="closeCart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="cart-items" id="cartItems">
+            <!-- Les articles du panier seront ajoutés ici -->
+        </div>
+        
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">0 FCFA</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">Passer la commande</button>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div class="modal" id="paymentModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Mode de paiement</h3>
+                <button class="close-modal" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="payment-methods">
+                <div class="payment-method" data-method="paypal">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+                    <span>PayPal</span>
+                </div>
+                
+                <div class="payment-method" data-method="mastercard">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard">
+                    <span>Mastercard</span>
+                </div>
+                
+                <div class="payment-method" data-method="orange-money">
+                    <img src="https://images.seeklogo.com/logo-png/44/1/orange-money-logo-png_seeklogo-440383.png" alt="Orange Money">
+                    <span>Orange Money</span>
+                </div>
+                
+                <div class="payment-method" data-method="wave">
+                    <img src="https://cdn.brandfetch.io/idg7vSSBJp/w/230/h/101/theme/dark/logo.png?c=1dxbfHSJFAPEGdCLU4o5B" alt="Wave">
+                    <span>Wave</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Scripts -->
+    <script src="../js/products.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/payment-api.js"></script>
+    <script>
+        // Configuration pour la page accessoires
+        const CATEGORY_CONFIG = {
+            category: 'accessoires',
+            title: 'Accessoires',
+            description: 'Le détail qui fait toute la différence'
+        };
+
+        // Classe pour gérer la page de catégorie
+        class CategoryPage {
+            constructor() {
+                this.products = [];
+                this.filteredProducts = [];
+                this.cart = JSON.parse(localStorage.getItem('cart')) || [];
+                this.init();
+            }
+
+            init() {
+                this.loadProducts();
+                this.setupEventListeners();
+                this.updateCartCount();
+            }
+
+            loadProducts() {
+                // Filtrer les produits par catégorie
+                this.products = window.products.filter(product => product.category === CATEGORY_CONFIG.category);
+                this.filteredProducts = [...this.products];
+                this.displayProducts();
+            }
+
+            setupEventListeners() {
+                // Cart
+                const cartBtn = document.getElementById('cartBtn');
+                const cartSidebar = document.getElementById('cartSidebar');
+                const closeCart = document.getElementById('closeCart');
+                const overlay = document.getElementById('overlay');
+                
+                cartBtn?.addEventListener('click', () => {
+                    cartSidebar.classList.add('show');
+                    overlay.classList.add('show');
+                    this.displayCartItems();
+                });
+
+                closeCart?.addEventListener('click', () => {
+                    cartSidebar.classList.remove('show');
+                    overlay.classList.remove('show');
+                });
+
+                // Search
+                const searchInput = document.getElementById('searchInput');
+                searchInput?.addEventListener('input', (e) => {
+                    this.searchProducts(e.target.value);
+                });
+
+                // Sort
+                const sortBy = document.getElementById('sortBy');
+                sortBy?.addEventListener('change', (e) => {
+                    this.sortProducts(e.target.value);
+                });
+
+                // Checkout
+                const checkoutBtn = document.getElementById('checkoutBtn');
+                const paymentModal = document.getElementById('paymentModal');
+                const closeModal = document.getElementById('closeModal');
+
+                checkoutBtn?.addEventListener('click', () => {
+                    cartSidebar.classList.remove('show');
+                    paymentModal.classList.add('show');
+                    overlay.classList.add('show');
+                });
+
+                closeModal?.addEventListener('click', () => {
+                    paymentModal.classList.remove('show');
+                    overlay.classList.remove('show');
+                });
+
+                // Payment methods
+                document.querySelectorAll('.payment-method').forEach(method => {
+                    method.addEventListener('click', () => {
+                        const paymentMethod = method.dataset.method;
+                        this.processPayment(paymentMethod);
+                    });
+                });
+
+                // Mobile menu
+                const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+                const navMenu = document.getElementById('navMenu');
+                
+                mobileMenuToggle?.addEventListener('click', () => {
+                    navMenu.classList.toggle('show');
+                });
+
+                // Close overlay when clicking outside
+                overlay?.addEventListener('click', () => {
+                    cartSidebar.classList.remove('show');
+                    paymentModal.classList.remove('show');
+                    overlay.classList.remove('show');
+                });
+            }
+
+            displayProducts() {
+                const productsGrid = document.getElementById('productsGrid');
+                if (!productsGrid) return;
+
+                productsGrid.innerHTML = '';
+                
+                if (this.filteredProducts.length === 0) {
+                    productsGrid.innerHTML = '<p class="no-products">Aucun produit trouvé dans cette catégorie.</p>';
+                    return;
+                }
+
+                this.filteredProducts.forEach(product => {
+                    const productCard = document.createElement('div');
+                    productCard.className = 'product-card';
+                    productCard.innerHTML = `
+                        <div class="product-image-container">
+                            <img src="${product.image}" alt="${product.name}" class="product-image">
+                            ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''}
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">${product.name}</h3>
+                            <p class="product-description">${product.description}</p>
+                            <div class="product-meta">
+                                ${product.brand ? `<span class="product-brand">${product.brand}</span>` : ''}
+                                ${product.color ? `<span class="product-color">${product.color}</span>` : ''}
+                                ${product.size ? `<span class="product-size">${product.size}</span>` : ''}
+                            </div>
+                            <div class="product-price-add">
+                                <span class="product-price">${window.productUtils.formatPrice(product.price)}</span>
+                                <button class="add-to-cart" data-product-id="${product.id}">
+                                    <i class="fas fa-cart-plus"></i> Ajouter
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                    productsGrid.appendChild(productCard);
+                });
+
+                // Add to cart buttons
+                document.querySelectorAll('.add-to-cart').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const productId = parseInt(e.target.closest('.add-to-cart').dataset.productId);
+                        this.addToCart(productId);
+                    });
+                });
+            }
+
+            addToCart(productId) {
+                const product = this.products.find(p => p.id === productId);
+                if (!product) return;
+
+                const existingItem = this.cart.find(item => item.id === productId);
+                
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    this.cart.push({
+                        ...product,
+                        quantity: 1
+                    });
+                }
+
+                this.saveCart();
+                this.updateCartCount();
+                
+                // Ouvrir le panier et afficher les articles
+                const cartSidebar = document.getElementById('cartSidebar');
+                const overlay = document.getElementById('overlay');
+                cartSidebar.classList.add('show');
+                overlay.classList.add('show');
+                this.displayCartItems();
+                
+                this.showNotification(`${product.name} ajouté au panier !`);
+            }
+
+            removeFromCart(productId) {
+                this.cart = this.cart.filter(item => item.id !== productId);
+                this.saveCart();
+                this.updateCartCount();
+                this.displayCartItems();
+            }
+
+            updateQuantity(productId, quantity) {
+                const item = this.cart.find(item => item.id === productId);
+                if (item) {
+                    if (quantity <= 0) {
+                        this.removeFromCart(productId);
+                    } else {
+                        item.quantity = quantity;
+                        this.saveCart();
+                        this.displayCartItems();
+                    }
+                }
+            }
+
+            updateCartCount() {
+                const cartCount = document.getElementById('cartCount');
+                const totalItems = this.cart.reduce((sum, item) => sum + item.quantity, 0);
+                if (cartCount) {
+                    cartCount.textContent = totalItems;
+                }
+            }
+
+            displayCartItems() {
+                const cartItems = document.getElementById('cartItems');
+                const cartTotal = document.getElementById('cartTotal');
+                
+                if (!cartItems || !cartTotal) return;
+
+                if (this.cart.length === 0) {
+                    cartItems.innerHTML = '<p style="text-align: center; padding: 2rem;">Votre panier est vide.</p>';
+                    cartTotal.textContent = '0 FCFA';
+                    return;
+                }
+
+                cartItems.innerHTML = '';
+                let total = 0;
+
+                this.cart.forEach(item => {
+                    const cartItem = document.createElement('div');
+                    cartItem.className = 'cart-item';
+                    cartItem.innerHTML = `
+                        <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+                        <div class="cart-item-info">
+                            <div class="cart-item-title">${item.name}</div>
+                            <div class="cart-item-price">${window.productUtils.formatPrice(item.price)}</div>
+                            <div class="cart-item-quantity">
+                                <button class="quantity-btn" onclick="categoryPage.updateQuantity(${item.id}, ${item.quantity - 1})">-</button>
+                                <span>${item.quantity}</span>
+                                <button class="quantity-btn" onclick="categoryPage.updateQuantity(${item.id}, ${item.quantity + 1})">+</button>
+                            </div>
+                            <button class="remove-item" onclick="categoryPage.removeFromCart(${item.id})">Supprimer</button>
+                        </div>
+                    `;
+                    cartItems.appendChild(cartItem);
+                    total += item.price * item.quantity;
+                });
+
+                cartTotal.textContent = window.productUtils.formatPrice(total);
+            }
+
+            searchProducts(query) {
+                if (!query.trim()) {
+                    this.filteredProducts = [...this.products];
+                } else {
+                    this.filteredProducts = this.products.filter(product => 
+                        product.name.toLowerCase().includes(query.toLowerCase()) ||
+                        product.description.toLowerCase().includes(query.toLowerCase()) ||
+                        (product.brand && product.brand.toLowerCase().includes(query.toLowerCase()))
+                    );
+                }
+                this.displayProducts();
+            }
+
+            sortProducts(sortBy) {
+                this.filteredProducts = window.productUtils.sortProducts(this.filteredProducts, sortBy);
+                this.displayProducts();
+            }
+
+            processPayment(method) {
+                let message = '';
+                switch(method) {
+                    case 'paypal':
+                        message = 'Redirection vers PayPal en cours...';
+                        break;
+                    case 'mastercard':
+                        message = 'Paiement par Mastercard sécurisé.';
+                        break;
+                    case 'orange-money':
+                        message = 'Paiement par Orange Money initié.';
+                        break;
+                    case 'wave':
+                        message = 'Paiement par Wave en cours...';
+                        break;
+                }
+                
+                this.showNotification(message, 'success');
+                
+                // Clear cart after successful payment
+                setTimeout(() => {
+                    this.cart = [];
+                    this.saveCart();
+                    this.updateCartCount();
+                    document.getElementById('paymentModal').classList.remove('show');
+                    document.getElementById('overlay').classList.remove('show');
+                }, 2000);
+            }
+
+            showNotification(message, type = 'success') {
+                const notification = document.createElement('div');
+                notification.className = `notification notification-${type}`;
+                notification.innerHTML = `
+                    <div class="notification-content">
+                        <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i>
+                        <span>${message}</span>
+                    </div>
+                `;
+                
+                document.body.appendChild(notification);
+                
+                setTimeout(() => {
+                    notification.classList.add('show');
+                }, 100);
+                
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                    setTimeout(() => {
+                        if (notification.parentNode) {
+                            notification.parentNode.removeChild(notification);
+                        }
+                    }, 300);
+                }, 3000);
+            }
+
+            saveCart() {
+                localStorage.setItem('cart', JSON.stringify(this.cart));
+            }
+        }
+
+        // Initialiser la page
+        const categoryPage = new CategoryPage();
+    </script>
+</body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COURA SHOP - Vêtements & Mode</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="../index.html">
+                        <h1>COURA SHOP</h1>
+                        <p class="tagline">Votre style, notre passion</p>
+                    </a>
+                </div>
+                
+                <nav class="nav-menu" id="navMenu">
+                    <ul class="nav-list">
+                        <li><a href="../index.html" class="nav-link">Accueil</a></li>
+                        <li><a href="../index.html#products" class="nav-link">Produits</a></li>
+                        <li><a href="vetements.html" class="nav-link active">Vêtements</a></li>
+                        <li><a href="cosmetiques.html" class="nav-link">Cosmétiques</a></li>
+                        <li><a href="chaussures.html" class="nav-link">Chaussures</a></li>
+                        <li><a href="accessoires.html" class="nav-link">Accessoires</a></li>
+                        <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="nav-actions">
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="Rechercher des vêtements..." class="search-input">
+                        <button class="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                    
+                    <button class="cart-btn" id="cartBtn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                    
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section Vêtements -->
+    <section class="hero vetements-hero">
+        <div class="hero-content">
+            <div class="container">
+                <h2 class="hero-title">Collection Vêtements</h2>
+                <p class="hero-subtitle">Découvrez notre gamme complète de vêtements tendance pour tous les styles</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">40+</span>
+                        <span class="stat-label">Articles</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">10</span>
+                        <span class="stat-label">Marques</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">-30%</span>
+                        <span class="stat-label">Promos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- Category Description -->
+    <section class="category-description">
+        <div class="container">
+            <div class="description-content">
+                <div class="description-text">
+                    <h2>Notre Collection Vêtements</h2>
+                    <p>Chez COURA SHOP, nous croyons que chaque personne mérite de s'exprimer à travers son style. Notre collection de vêtements combine confort, qualité et dernières tendances.</p>
+                    <p>Des pièces intemporelles aux créations audacieuses, découvrez une gamme complète pour chaque occasion : du bureau aux sorties entre amis, en passant par les événements spéciaux.</p>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Tissus de qualité supérieure</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Coupe parfaite pour tous les silhouettes</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Styles variés : classique, moderne, audacieux</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="description-image">
+                    <img src="https://sspark.genspark.ai/cfimages?url=https://images.pexels.com/photos/29536646/pexels-photo-29536646.jpeg" alt="Collection vêtements">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subcategories -->
+    <section class="subcategories">
+        <div class="container">
+            <h2 class="section-title">Nos Sous-catégories</h2>
+            <div class="subcategories-grid">
+                <div class="subcategory-card" data-subcategory="robes">
+                    <div class="subcategory-icon">
+                        <i class="fas fa-female"></i>
+                    </div>
+                    <h3>Robes</h3>
+                    <p>Robes d'été, de soirée, habillées</p>
+                </div>
+                
+                <div class="subcategory-card" data-subcategory="chemises">
+                    <div class="subcategory-icon">
+                        <i class="fas fa-male"></i>
+                    </div>
+                    <h3>Chemises</h3>
+                    <p>Chemises habillées, décontractées</p>
+                </div>
+                
+                <div class="subcategory-card" data-subcategory="pantalons">
+                    <div class="subcategory-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Pantalons</h3>
+                    <p>Pantalons formels, jeans, cargo</p>
+                </div>
+                
+                <div class="subcategory-card" data-subcategory="vestes">
+                    <div class="subcategory-icon">
+                        <i class="fas fa-user-secret"></i>
+                    </div>
+                    <h3>Vestes & Manteaux</h3>
+                    <p>Blazers, vestes, manteaux</p>
+                </div>
+                
+                <div class="subcategory-card" data-subcategory="tops">
+                    <div class="subcategory-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h3>Tops & T-shirts</h3>
+                    <p>T-shirts, débardeurs, tops</p>
+                </div>
+                
+                <div class="subcategory-card" data-subcategory="sport">
+                    <div class="subcategory-icon">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <h3>Vêtements Sport</h3>
+                    <p>Shorts, leggings, survêtements</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products vetements-products">
+        <div class="container">
+            <div class="products-header">
+                <h2 class="section-title">Nos Vêtements</h2>
+                <div class="filters">
+                    <select id="subcategoryFilter" class="filter-select">
+                        <option value="">Toutes les sous-catégories</option>
+                        <option value="robes">Robes</option>
+                        <option value="chemises">Chemises</option>
+                        <option value="pantalons">Pantalons</option>
+                        <option value="vestes">Vestes & Manteaux</option>
+                        <option value="tops">Tops & T-shirts</option>
+                        <option value="sport">Vêtements Sport</option>
+                    </select>
+                    
+                    <select id="sortBy" class="filter-select">
+                        <option value="">Trier par</option>
+                        <option value="price-asc">Prix croissant</option>
+                        <option value="price-desc">Prix décroissant</option>
+                        <option value="name">Nom</option>
+                    </select>
+                    
+                    <select id="colorFilter" class="filter-select">
+                        <option value="">Toutes les couleurs</option>
+                        <option value="Noir">Noir</option>
+                        <option value="Blanc">Blanc</option>
+                        <option value="Bleu">Bleu</option>
+                        <option value="Rouge">Rouge</option>
+                        <option value="Rose">Rose</option>
+                        <option value="Gris">Gris</option>
+                        <option value="Beige">Beige</option>
+                        <option value="Kaki">Kaki</option>
+                        <option value="Navy">Navy</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="products-grid" id="productsGrid">
+                <!-- Les produits seront chargés dynamiquement par JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Size Guide -->
+    <section class="size-guide">
+        <div class="container">
+            <h2 class="section-title">Guide des Tailles</h2>
+            <div class="size-guide-content">
+                <div class="size-table">
+                    <h3>Femmes</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Taille</th>
+                                <th>Poitrine (cm)</th>
+                                <th>Taille (cm)</th>
+                                <th>Hanches (cm)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>S</td><td>82-86</td><td>62-66</td><td>88-92</td></tr>
+                            <tr><td>M</td><td>86-90</td><td>66-70</td><td>92-96</td></tr>
+                            <tr><td>L</td><td>90-94</td><td>70-74</td><td>96-100</td></tr>
+                            <tr><td>XL</td><td>94-98</td><td>74-78</td><td>100-104</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="size-table">
+                    <h3>Hommes</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Taille</th>
+                                <th>Poitrine (cm)</th>
+                                <th>Taille (cm)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>S</td><td>88-92</td><td>76-80</td></tr>
+                            <tr><td>M</td><td>92-96</td><td>80-84</td></tr>
+                            <tr><td>L</td><td>96-100</td><td>84-88</td></tr>
+                            <tr><td>XL</td><td>100-104</td><td>88-92</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Mon Panier</h3>
+            <button class="close-cart" id="closeCart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="cart-items" id="cartItems">
+            <!-- Les articles du panier seront ajoutés ici -->
+        </div>
+        
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">0 FCFA</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">Passer la commande</button>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div class="modal" id="paymentModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Mode de paiement</h3>
+                <button class="close-modal" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="payment-methods">
+                <div class="payment-method" data-method="paypal">
+                    <img src="https://www.svgrepo.com/show/452082/paypal.svg" alt="PayPal">
+                    <span>PayPal</span>
+                </div>
+                
+                <div class="payment-method" data-method="mastercard">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard">
+                    <span>Mastercard</span>
+                </div>
+                
+                <div class="payment-method" data-method="orange-money">
+                    <img src="https://images.seeklogo.com/logo-png/44/1/orange-money-logo-png_seeklogo-440383.png" alt="Orange Money">
+                    <span>Orange Money</span>
+                </div>
+                
+                <div class="payment-method" data-method="wave">
+                    <img src="https://cdn.brandfetch.io/idg7vSSBJp/w/230/h/101/theme/dark/logo.png?c=1dxbfHSJFAPEGdCLU4o5B" alt="Wave">
+                    <span>Wave</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Scripts -->
+    <script src="../js/products.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/payment-api.js"></script>
+    <script src="../js/category-pages.js"></script>
+</body>
+</html>
